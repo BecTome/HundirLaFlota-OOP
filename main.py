@@ -1,8 +1,6 @@
 from HLF.src.tablero import Tablero
 from HLF.src.player import Player, Computer
-from HLF.utils.config import BOARD_SIZE, BOAT_SIGN, HIT_SIGN, BOAT_SIZES
-import numpy as np
-from time import sleep
+from HLF.utils.config import BOARD_SIZE
 
 tab_jugador = Tablero(BOARD_SIZE)
 tab_comp = Tablero(BOARD_SIZE)
