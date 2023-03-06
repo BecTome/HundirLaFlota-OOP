@@ -64,5 +64,15 @@ class Tablero:
             cond_overlap = np.any(self.tablero[orig[0] , (orig[1] - boat_size + 1):(orig[1] + 1)] == self.boat_sign) 
         return cond_border and not cond_overlap
 
+    def check_coordinates(self, x, y):
+        cond_x_in = (0 <= x < self.def_board_size)
+        cond_y_in = (0 <= y < self.def_board_size)
+        try:
+            cond_empty = (self.tablero[x, y] not in [self.hit_sign, self.water_sign])
+        except IndexError:
+            cond_empty = False
+
+        return cond_x_in and cond_y_in and cond_empty
+
     def __str__(self):
         return str(self.tablero)
